@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan 4 - DOM & API</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      /* ============ PERBAIKAN KONTRAS DARK MODE ============ */
+      body.dark {
+        background-color: #0f172a;
+        color: #e5e7eb;
+      }
+
+      /* Kartu panel jadi gelap, teks otomatis terbaca */
+      body.dark .card {
+        background-color: #1e293b;
+        border-color: #334155;
+      }
+
+      /* Input field gelap + teks terang */
+      body.dark input {
+        background-color: #334155;
+        color: #f1f5f9;
+        border-color: #475569;
+      }
+      body.dark input::placeholder {
+        color: #94a3b8;
+      }
+
+      /* Item todo list */
+      body.dark #list-todo li {
+        background-color: #334155;
+        color: #e5e7eb;
+      }
+      body.dark #list-todo li.text-gray-500 {
+        background-color: transparent;
+        color: #94a3b8;
+      }
+
+      /* Card post dari API */
+      body.dark #api-output > div {
+        background-color: #334155;
+      }
+      body.dark #api-output h4 {
+        color: #f8fafc;
+      }
+      body.dark #api-output p {
+        color: #cbd5e1;
+      }
+
+      /* Pagination */
+      body.dark #halaman-info {
+        color: #e5e7eb;
+      }
+      body.dark #btn-prev:not(:disabled),
+      body.dark #btn-next:not(:disabled) {
+        background-color: #475569;
+        color: #f1f5f9;
+      }
+      body.dark button:disabled {
+        opacity: 0.4;
+      }
+
+      /* Tombol toggle saat dark aktif */
+      body.dark #btn-dark-mode {
+        background-color: #facc15;
+        color: #1f2937;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 p-8 transition-colors duration-300" id="body">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-2xl font-bold">Latihan 4: DOM & API</h1>
+      <button
+        id="btn-dark-mode"
+        class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700"
+      >
+        🌙 Dark Mode
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <!-- TODO LIST -->
+      <div class="card p-4 bg-white rounded border">
+        <h2 class="font-bold mb-2">✅ Todo List</h2>
+        <div class="flex gap-2 mb-3">
+          <input
+            type="text"
+            id="input-todo"
+            placeholder="Tulis tugas..."
+            class="border p-2 rounded flex-1"
+          />
+          <button
+            id="btn-tambah-todo"
+            class="bg-green-500 text-white px-4 py-2 rounded"
+          >
+            Tambah
+          </button>
+        </div>
+        <ul id="list-todo" class="space-y-2"></ul>
+      </div>
+
+      <!-- FETCH API + SEARCH + PAGINATION -->
+      <div class="card p-4 bg-white rounded border">
+        <h2 class="font-bold mb-2">🌐 Fetch API Posts</h2>
+        <div class="flex gap-2 mb-3">
+          <input
+            type="text"
+            id="input-search"
+            placeholder="Cari judul post..."
+            class="border p-2 rounded flex-1"
+          />
+          <button
+            id="btn-fetch"
+            class="bg-blue-500 text-white px-4 py-2 rounded"
+          >
+            Muat Data
+          </button>
+        </div>
+        <div id="api-output"></div>
+        <div class="flex gap-2 mt-3 justify-center items-center">
+          <button id="btn-prev" class="bg-gray-300 px-4 py-2 rounded">
+            ← Previous
+          </button>
+          <span id="halaman-info" class="py-2">Hal 1</span>
+          <button id="btn-next" class="bg-gray-300 px-4 py-2 rounded">
+            Next →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan 2 - Loop & Fungsi</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-50 p-8">
+    <h1 class="text-2xl font-bold mb-4">Latihan 2: Loop & Fungsi</h1>
+    <div id="result" class="space-y-4"></div>
+
+    <!-- Form Kalkulator BMI -->
+    <div class="p-4 bg-indigo-50 rounded border mt-4">
+      <h2 class="font-bold mb-2">4. Kalkulator BMI</h2>
+      <div class="flex gap-2 mb-2">
+        <input
+          type="number"
+          id="berat"
+          placeholder="Berat (kg)"
+          class="border p-2 rounded"
+        />
+        <input
+          type="number"
+          id="tinggi"
+          placeholder="Tinggi (cm)"
+          class="border p-2 rounded"
+        />
+        <button
+          id="btn-hitung-bmi"
+          class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600"
+        >
+          Hitung BMI
+        </button>
+      </div>
+      <div id="hasil-bmi"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

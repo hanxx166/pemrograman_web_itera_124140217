@@ -1,0 +1,228 @@
+/* ============================================================
+   Mini POS — style.css
+   Styling antarmuka aplikasi kasir (responsif)
+   ============================================================ */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --danger: #dc2626;
+  --success: #16a34a;
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.app-header {
+  background: var(--primary);
+  color: #fff;
+  padding: 24px 16px;
+  text-align: center;
+}
+.app-header h1 {
+  font-size: 1.6rem;
+}
+.app-header p {
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* Layout 2 kolom, jadi 1 kolom di layar kecil (responsif) */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+.mt {
+  margin-top: 24px;
+}
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+.form-group input:focus {
+  outline: 2px solid var(--primary);
+  border-color: transparent;
+}
+
+.inline {
+  display: flex;
+  gap: 8px;
+}
+
+/* Pesan error wajib berwarna merah (sesuai soal) */
+.error-message {
+  display: block;
+  color: var(--danger);
+  font-size: 0.8rem;
+  min-height: 1.1em;
+  margin-top: 4px;
+  font-weight: 600;
+}
+.info-message {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  min-height: 1.1em;
+  margin-top: 4px;
+}
+.info-message.sukses {
+  color: var(--success);
+  font-weight: 600;
+}
+.info-message.gagal {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+.btn:hover {
+  filter: brightness(0.92);
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  width: 100%;
+}
+.btn-secondary {
+  background: #e2e8f0;
+  color: var(--text);
+}
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+.btn-hapus {
+  background: var(--danger);
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 0.78rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+th,
+td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+th {
+  background: #f8fafc;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+.num {
+  text-align: right;
+}
+
+.empty-message {
+  color: var(--muted);
+  font-style: italic;
+  padding: 12px 0;
+}
+
+.summary {
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 0.95rem;
+}
+.summary-row.total {
+  border-top: 1px solid var(--border);
+  margin-top: 6px;
+  padding-top: 8px;
+  font-size: 1.05rem;
+  color: var(--primary-dark);
+}
+
+.app-footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  padding: 20px 0 30px;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
