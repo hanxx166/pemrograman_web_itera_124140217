@@ -148,10 +148,10 @@ function hitungKembalian() {
   }
 
   if (uangBayar < totalAkhir) {
-    infoKembalian.textContent = `⚠️ Uang bayar belum mencukupi! Kurang ${formatRupiah(totalAkhir - uangBayar)}.`;
+    infoKembalian.textContent = `Uang bayar belum mencukupi! Kurang ${formatRupiah(totalAkhir - uangBayar)}.`;
     infoKembalian.className = "info-message gagal";
   } else {
-    infoKembalian.textContent = `✅ Kembalian: ${formatRupiah(uangBayar - totalAkhir)}`;
+    infoKembalian.textContent = `Kembalian: ${formatRupiah(uangBayar - totalAkhir)}`;
     infoKembalian.className = "info-message sukses";
   }
 }
@@ -164,12 +164,12 @@ function pakaiPromo() {
     promoAktif = true;
     localStorage.setItem(PROMO_KEY, kode);
     infoPromo.textContent =
-      "✅ Kode promo HEMAT10 berhasil dipakai (diskon 10%).";
+      "Kode promo HEMAT10 berhasil dipakai (diskon 10%).";
     infoPromo.className = "info-message sukses";
   } else {
     promoAktif = false;
     localStorage.removeItem(PROMO_KEY);
-    infoPromo.textContent = "❌ Kode promo tidak valid. Contoh kode: HEMAT10.";
+    infoPromo.textContent = "Kode promo tidak valid. Contoh kode: HEMAT10.";
     infoPromo.className = "info-message gagal";
   }
   renderKeranjang();
@@ -242,7 +242,20 @@ tbodyKeranjang.addEventListener("click", (event) => {
 if (promoAktif) {
   inputPromo.value = KODE_PROMO_VALID;
   infoPromo.textContent =
-    "✅ Kode promo HEMAT10 aktif (dimuat dari sesi sebelumnya).";
+    "Kode promo HEMAT10 aktif (dimuat dari sesi sebelumnya).";
   infoPromo.className = "info-message sukses";
 }
 renderKeranjang();
+// ---------- Real-time feedback: hilangkan error saat user mengetik ulang ----------
+inputNama.addEventListener("input", () => {
+  if (inputNama.value.trim().length >= 3) errorNama.textContent = "";
+});
+inputHarga.addEventListener("input", () => {
+  const val = parseFloat(inputHarga.value);
+  if (!isNaN(val) && val >= 500) errorHarga.textContent = "";
+});
+inputQty.addEventListener("input", () => {
+  const val = parseFloat(inputQty.value);
+  if (!isNaN(val) && Number.isInteger(val) && val >= 1)
+    errorQty.textContent = "";
+});

@@ -1,6 +1,6 @@
-# Mini POS — Aplikasi Kasir & Keranjang Belanja Sederhana
+# Mini POS - Aplikasi Kasir & Keranjang Belanja Sederhana
 
-Tugas Praktikum Pertemuan 1 — Pengembangan Aplikasi Web (PAW), Teknik Informatika ITERA
+Tugas Praktikum Pertemuan 1 - Pengembangan Aplikasi Web (PAW), Teknik Informatika ITERA
 
 ## Identitas
 
@@ -17,10 +17,11 @@ keranjang belanja berbasis localStorage sehingga data tidak hilang saat halaman 
 
 ## Panduan Menjalankan
 
-1. Clone repository ini: `git clone https://github.com/<username>/pemrograman_web_itera_<NIM>.git`
-2. Buka folder `[NAMA]_[NIM]_pertemuan1` di VS Code.
+1. Clone repository ini: `git clone https://github.com/hanxx166/pemrograman_web_itera_124140217.git`
+2. Buka folder `ErhanKurniawan_124140217_pertemuan1` di VS Code.
 3. Klik kanan `index.html` → **Open with Live Server** (atau buka langsung di browser,
    aplikasi tidak membutuhkan server karena tidak memakai Fetch API).
+4. Pastikan folder `modul/` (berisi latihan 1-4) juga tersedia di dalam direktori proyek sebagai bukti penyelesaian materi praktikum dasar.
 
 ## Daftar Fitur
 
@@ -39,9 +40,12 @@ keranjang belanja berbasis localStorage sehingga data tidak hilang saat halaman 
 
 ## Tangkapan Layar
 
-1. `docs/screenshot-1-form.png` — Tampilan form input utama
-2. `docs/screenshot-2-error.png` — Tampilan saat validasi error muncul
-3. `docs/screenshot-3-hasil.png` — Hasil perhitungan kalkulator & tabel keranjang
+| No | Screenshot | Keterangan Fitur |
+| :--- | :--- | :--- |
+| 1 | ![Full Screen](./assets/Full_Screen.png) | Tampilan penuh aplikasi Mini POS |
+| 2 | ![Form Input](./assets/Form_Input.png) | Form input barang dengan placeholder panduan pengguna |
+| 3 | ![Validasi Error](./assets/Validasi_Error.png) | Validasi form: Pesan error merah muncul saat input tidak sesuai syarat |
+| 4 | ![Hasil Keranjang](./assets/Keranjang.png) | Tabel keranjang, subtotal otomatis, dan ringkasan total + diskon |
 
 ## Penjelasan Teknis Singkat
 
@@ -54,7 +58,7 @@ pesan ke elemen `<small class="error-message">` di bawah input terkait dan menge
 ### Algoritma Kalkulator Keuangan
 
 `hitungTotalBelanja()` mengakumulasi subtotal (`harga × qty`) dengan `reduce()`, lalu
-menentukan diskon: 10% jika kode promo HEMAT10 aktif ATAU total ≥ Rp 50.000.
+menentukan diskon: 10% diberikan jika kode promo 'HEMAT10' valid dimasukkan, atau secara otomatis jika total belanja mencapai minimal Rp 50.000 tanpa kode promo.
 `hitungKembalian()` menghitung `uangBayar − totalAkhir`; jika negatif, ditampilkan
 pesan "uang belum mencukupi" beserta nominal kekurangannya.
 

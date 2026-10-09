@@ -4,29 +4,29 @@
 let mahasiswa = [
   {
     nama: "Andi Pratama",
-    nim: "231140001",
+    nim: "124140001",
     jurusan: "Teknik Informatika",
     nilai: 88,
   },
   {
     nama: "Budi Santoso",
-    nim: "231140002",
+    nim: "124140002",
     jurusan: "Sistem Informasi",
     nilai: 92,
   },
   {
     nama: "Citra Dewi",
-    nim: "231140003",
+    nim: "124140003",
     jurusan: "Teknik Informatika",
     nilai: 75,
   },
   {
     nama: "Dian Lestari",
-    nim: "231140004",
+    nim: "124140004",
     jurusan: "Teknik Elektro",
     nilai: 80,
   },
-  { nama: "Eka Saputra", nim: "231140005", jurusan: "Sains Data", nilai: 95 },
+  { nama: "Eka Saputra", nim: "124140005", jurusan: "Sains Data", nilai: 95 },
 ];
 
 // ============================================================
@@ -98,13 +98,13 @@ function renderTabel() {
 
     <div class="p-4 bg-green-50 rounded border">
       <h2 class="font-bold">🏆 Nilai Tertinggi</h2>
-      <p>${terbaik.nama} (${terbaik.nim}) — Nilai: <strong>${terbaik.nilai}</strong></p>
+      <p>${terbaik.nama} (${terbaik.nim}) - Nilai: <strong>${terbaik.nilai}</strong></p>
     </div>
 
     <div class="p-4 bg-yellow-50 rounded border">
       <h2 class="font-bold">📊 Di Atas Rata-rata (${rataRata})</h2>
       <ul class="list-disc ml-6">
-        ${diAtasRata.map((m) => `<li>${m.nama} — ${m.nilai}</li>`).join("")}
+        ${diAtasRata.map((m) => `<li>${m.nama} - ${m.nilai}</li>`).join("")}
       </ul>
     </div>
   `;
