@@ -1,5 +1,5 @@
 /* ============================================================
-   Mini POS — script.js
+   Mini POS - script.js
    Tugas Pertemuan 1: Aplikasi Kasir & Keranjang Belanja
    ============================================================ */
 
@@ -123,16 +123,16 @@ function hitungTotalBelanja() {
   let keterangan = "";
   if (promoAktif) {
     diskon = total * PERSEN_DISKON;
-    keterangan = `Kode promo ${KODE_PROMO_VALID} aktif — diskon 10%.`;
+    keterangan = `Kode promo ${KODE_PROMO_VALID} aktif - diskon 10%.`;
   } else if (total >= MINIMAL_DISKON) {
     diskon = total * PERSEN_DISKON;
-    keterangan = `Total belanja ≥ ${formatRupiah(MINIMAL_DISKON)} — diskon otomatis 10%.`;
+    keterangan = `Total belanja ≥ ${formatRupiah(MINIMAL_DISKON)} - diskon otomatis 10%.`;
   }
 
   return { total, diskon, totalAkhir: total - diskon, keterangan };
 }
 
-// Kembalian = Uang Bayar − Total Akhir
+// Kembalian = Uang Bayar - Total Akhir
 function hitungKembalian() {
   const { totalAkhir } = hitungTotalBelanja();
   const uangBayar = parseFloat(inputUangBayar.value);
