@@ -1,4 +1,4 @@
-# Pemrograman Web — Tugas & Pertemuan
+# Pemrograman Web - Tugas & Pertemuan
 
 Repositori ini adalah kumpulan materi tugas pertemuan mata kuliah Pemrograman Web (oleh Erhan Kurniawan / hanxx166). Struktur direka agar setiap pertemuan / tugas berada di folder terpisah dan akan di-push secara berkala.
 
@@ -52,10 +52,10 @@ Panduan singkat untuk README folder tugas:
 ## Cara preview / menjalankan secara lokal
 Karena ini repo statis (HTML/CSS/JS), cara termudah adalah membuka `index.html` langsung di browser atau menjalankan server statis sederhana.
 
-Opsi 1 — buka langsung (file://):
+Opsi 1 - buka langsung (file://):
 - Buka `ErhanKurniawan_124140217_pertemuan1/index.html` di browser.
 
-Opsi 2 — jalankan server statis (direkomendasikan untuk fetch/ajax atau modul import):
+Opsi 2 - jalankan server statis (direkomendasikan untuk fetch/ajax atau modul import):
 - Dengan Python 3 (di folder root repo):
 
 ```bash
@@ -118,10 +118,3 @@ Jika preview tidak menampilkan styling atau skrip:
 - Cek console browser untuk error JS atau 404 asset.
 
 ---
-
-Jika mau, saya bisa:
-- Menambahkan `SUMMARY.md` otomatis yang mendaftar semua folder pertemuan yang ada sekarang.
-- Membuat template `README.md` untuk tiap folder pertemuan supaya konsisten.
-- Meng-setup GitHub Pages (config + branch) untuk hosting demo.
-
-Jika setuju, saya akan commit README root ini ke repository.
