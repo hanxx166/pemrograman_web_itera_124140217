@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAW Pertemuan 2 - JavaScript Next Gen (ES6+)</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #818cf8;
+      --green: #4ade80;
+      --red: #f87171;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px;
+    }
+    .container { max-width: 900px; margin: 0 auto; }
+    header {
+      text-align: center;
+      padding: 28px 20px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+    header h1 {
+      font-size: 1.6rem;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 6px;
+    }
+    header p { color: var(--muted); font-size: 0.95rem; }
+    #runBtn {
+      display: block;
+      margin: 0 auto 28px;
+      padding: 12px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0f172a;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    #runBtn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(56,189,248,0.35); }
+    #runBtn:active { transform: translateY(0); }
+    .output-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+    .output-item h3 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    .output-item .desc { color: var(--muted); font-size: 0.85rem; margin-bottom: 12px; }
+    .result {
+      background: #0b1220;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      font-family: "Fira Code", Consolas, monospace;
+      font-size: 0.85rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #cbd5e1;
+    }
+    /* Style untuk hasil async */
+    .async-section {
+      padding: 10px 12px;
+      border-bottom: 1px dashed var(--border);
+      font-family: inherit;
+      white-space: normal;
+    }
+    .async-section:last-child { border-bottom: none; }
+    .async-status { color: var(--muted); }
+    .ok { color: var(--green); }
+    .err { color: var(--red); }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: #334155;
+      color: var(--accent);
+      font-size: 0.75rem;
+      margin-right: 6px;
+    }
+    footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>JavaScript Next Gen (ES6+)</h1>
+      <p>Praktikum Pengembangan Aplikasi Web · Pertemuan 2 · Teknik Informatika ITERA</p>
+    </header>
+
+    <button id="runBtn">Run Demo</button>
+
+    <div id="output"></div>
+
+    <footer> © 2026 · Tugas 2 Praktikum Pengembangan Aplikasi Web · Teknik Informatika ITERA</footer>
+  </div>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
