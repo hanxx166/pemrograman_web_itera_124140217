@@ -1,0 +1,692 @@
+/* ============================================================
+   ITERA Student Hub — style.css
+   Tema: Dark/Light via CSS Variables + data-theme
+   Layout: Bento Box dengan CSS Grid
+   ============================================================ */
+
+/* ---------- 1. VARIABEL TEMA ---------- */
+:root {
+  --radius: 16px;
+  --gap: 18px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-ui: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Consolas", monospace;
+}
+
+/* Tema Gelap (default) */
+[data-theme="dark"] {
+  --bg: #0f1420;
+  --surface: #1a2130;
+  --surface-2: #232c3f;
+  --border: #2e3950;
+  --text: #e8edf5;
+  --muted: #8b96ab;
+  --accent: #4f8ef7;
+  --accent-soft: rgba(79, 142, 247, 0.15);
+  --success: #34d399;
+  --danger: #f87171;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Tema Terang */
+[data-theme="light"] {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --surface-2: #f0f3f9;
+  --border: #e2e8f2;
+  --text: #1e2635;
+  --muted: #6b7688;
+  --accent: #3b76e0;
+  --accent-soft: rgba(59, 118, 224, 0.12);
+  --success: #10b981;
+  --danger: #ef4444;
+  --shadow: 0 4px 20px rgba(30, 42, 66, 0.08);
+}
+
+/* ---------- 2. RESET & DASAR ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+}
+
+/* ---------- 3. HEADER ---------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  animation: fadeDown 0.5s ease both;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.brand-logo-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.brand h1 {
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+.brand p {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+#dateNow {
+  font-family: var(--font-mono);
+}
+
+/* ---------- 3b. TOGGLE (adaptasi shadcn/Radix ke vanilla) ---------- */
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+.toggle:hover {
+  background: var(--surface-2);
+}
+.toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+}
+.toggle[data-state="on"] {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.toggle:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* variant */
+.toggle-outline {
+  border: 1px solid var(--border);
+  background: transparent;
+}
+.toggle-outline:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* size */
+.toggle-sm {
+  height: 40px;
+  padding: 0 12px;
+}
+.toggle-default {
+  height: 44px;
+  padding: 0 16px;
+}
+.toggle-lg {
+  height: 48px;
+  padding: 0 20px;
+}
+
+/* Tombol tema: bulat, ikon saja */
+.toggle.theme-toggle {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+.toggle.theme-toggle:hover {
+  transform: rotate(20deg) scale(1.08);
+}
+.toggle.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- 4. BENTO GRID ---------- */
+.bento {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "quote    quote    quote    quote"
+    "weather  weather  stats    stats"
+    "schedule schedule schedule schedule"
+    "tasks    tasks    tasks    tasks";
+}
+.widget-quote {
+  grid-area: quote;
+}
+.widget-weather {
+  grid-area: weather;
+}
+.widget-schedule {
+  grid-area: schedule;
+}
+.widget-stats {
+  grid-area: stats;
+}
+.widget-tasks {
+  grid-area: tasks;
+}
+
+/* Tablet: 2 kolom */
+@media (max-width: 860px) {
+  .bento {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "quote    quote"
+      "weather  stats"
+      "schedule schedule"
+      "tasks    tasks";
+  }
+}
+/* Mobile: 1 kolom */
+@media (max-width: 560px) {
+  .bento {
+    grid-template-columns: 1fr;
+    grid-template-areas: "quote" "weather" "stats" "schedule" "tasks";
+  }
+}
+
+/* ---------- 5. KARTU WIDGET ---------- */
+.widget {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    border var(--transition);
+  animation: fadeUp 0.6s ease both;
+  animation-delay: var(--delay, 0s);
+}
+.widget:hover {
+  transform: translateY(-3px);
+}
+
+.widget-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.widget-head h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.badge {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+/* ---------- 6. WIDGET KUTIPAN ---------- */
+.widget-quote {
+  position: relative;
+  overflow: hidden;
+}
+.quote-mark {
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  font-size: 5rem;
+  color: var(--accent-soft);
+  font-family: Georgia, serif;
+  pointer-events: none;
+}
+.widget-quote blockquote {
+  font-size: 1.05rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+  min-height: 48px;
+}
+.widget-quote cite {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: normal;
+}
+
+/* ---------- 7. WIDGET CUACA ---------- */
+.weather-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 110px;
+  justify-content: center;
+}
+.weather-temp {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: var(--font-mono);
+}
+.weather-desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.weather-meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+}
+
+/* ---------- 8. WIDGET JADWAL MINGGUAN ---------- */
+.week-schedule {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.day-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+.day-card:hover {
+  transform: translateY(-3px);
+}
+.day-card.today {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent) inset;
+}
+.day-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.day-name {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 0.85rem;
+}
+.day-card.today .day-name {
+  color: var(--accent);
+}
+.day-flag {
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.slot-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.slot {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 0.82rem;
+}
+.slot-time {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+}
+.slot-course {
+  line-height: 1.4;
+}
+.slot-free {
+  color: var(--muted);
+  font-style: italic;
+}
+.slot-free .slot-course {
+  color: var(--muted);
+}
+.slot-code,
+.slot-room {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 860px) {
+  .week-schedule {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .week-schedule {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- 9. WIDGET STATISTIK ---------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.stat {
+  text-align: center;
+  background: var(--surface-2);
+  border-radius: 12px;
+  padding: 10px 4px;
+}
+.stat-num {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.progress-track {
+  height: 8px;
+  background: var(--surface-2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--success));
+  border-radius: 999px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- 10. WIDGET TUGAS ---------- */
+.filter-tabs {
+  display: flex;
+  gap: 6px;
+}
+.tab {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.78rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.tab:hover {
+  background: var(--surface-2);
+}
+.tab.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.task-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.task-form input[type="text"] {
+  flex: 1;
+  min-width: 140px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: border 0.2s;
+}
+.task-form input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.task-form select {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px 34px 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--surface-2);
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238b96ab' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  transition: border 0.2s;
+}
+.task-form select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+#taskTitle {
+  flex: 2;
+}
+
+.btn-primary {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    opacity 0.2s;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+.btn-ghost {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--surface-2);
+  border-radius: 12px;
+  animation: slideIn 0.3s ease both;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+.task-item:hover {
+  transform: translateX(3px);
+}
+
+.task-check {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 0.7rem;
+  color: transparent;
+  transition:
+    background 0.2s,
+    border 0.2s;
+}
+.task-item.done .task-check {
+  background: var(--success);
+  border-color: var(--success);
+  color: #fff;
+}
+
+.task-info {
+  flex: 1;
+  min-width: 0;
+}
+.task-title {
+  font-size: 0.92rem;
+  word-break: break-word;
+}
+.task-item.done .task-title {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+.task-course {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.task-actions {
+  display: flex;
+  gap: 6px;
+}
+.icon-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: grid;
+  place-items: center;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+}
+.icon-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.icon-btn:hover {
+  background: var(--surface);
+  transform: scale(1.1);
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--muted);
+  padding: 24px 0;
+  font-size: 0.9rem;
+}
+
+/* ---------- 11. FOOTER & UTILITAS ---------- */
+.footnote {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-top: 28px;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--surface-2);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 0.8s linear infinite;
+}
+
+/* ---------- 12. ANIMASI ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hormati preferensi pengguna yang tidak suka animasi */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

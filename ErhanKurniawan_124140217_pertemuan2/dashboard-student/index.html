@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITERA Student Hub - Personal Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- ===== HEADER ===== -->
+    <header class="topbar">
+      <div class="brand">
+        <img src="assets/Logo_informatika_itera-removebg-preview.png" alt="Logo Teknik Informatika ITERA" class="brand-logo-img" />
+        <div>
+          <h1>ITERA Student Hub</h1>
+          <p id="dateNow">Memuat tanggal...</p>
+        </div>
+      </div>
+      <!-- Komponen Toggle (dibuat via JS) dipasang di sini -->
+      <div id="themeMount" class="theme-mount"></div>
+    </header>
+
+    <!-- ===== BENTO GRID ===== -->
+    <main class="bento">
+
+      <!-- Widget: Kutipan Harian (API DummyJSON) -->
+      <section class="widget widget-quote" style="--delay: 0.05s">
+        <div class="quote-mark">"</div>
+        <blockquote id="quoteText">Memuat kutipan harian...</blockquote>
+        <cite id="quoteAuthor">-</cite>
+      </section>
+
+      <!-- Widget: Cuaca Kampus (API Open-Meteo) -->
+      <section class="widget widget-weather" style="--delay: 0.1s">
+        <div class="widget-head">
+          <h2>Cuaca Kampus</h2>
+          <span class="badge">ITERA</span>
+        </div>
+        <div id="weatherBody" class="weather-body">
+          <div class="spinner"></div>
+        </div>
+      </section>
+
+      <!-- Widget: Statistik Tugas (reduce) -->
+      <section class="widget widget-stats" style="--delay: 0.15s">
+        <div class="widget-head">
+          <h2>Progres</h2>
+        </div>
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-num" id="statTotal">0</span>
+            <span class="stat-label">Total</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" id="statDone">0</span>
+            <span class="stat-label">Selesai</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" id="statPending">0</span>
+            <span class="stat-label">Tersisa</span>
+          </div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </section>
+
+      <!-- Widget: Jadwal Kuliah Mingguan (Statis + Array Methods) -->
+      <section class="widget widget-schedule" style="--delay: 0.2s">
+        <div class="widget-head">
+          <h2>Jadwal Mingguan</h2>
+          <span class="badge" id="scheduleToday">-</span>
+        </div>
+        <div id="weekSchedule" class="week-schedule"></div>
+      </section>
+
+      <!-- Widget: Manajer Tugas (CRUD + localStorage) -->
+      <section class="widget widget-tasks" style="--delay: 0.25s">
+        <div class="widget-head">
+          <h2>Manajer Tugas</h2>
+          <div class="filter-tabs" id="filterTabs">
+            <button class="tab active" data-filter="all">Semua</button>
+            <button class="tab" data-filter="active">Aktif</button>
+            <button class="tab" data-filter="done">Selesai</button>
+          </div>
+        </div>
+
+        <!-- Form Tambah / Edit -->
+        <form id="taskForm" class="task-form" autocomplete="off">
+          <input type="hidden" id="taskId" />
+          <input type="text" id="taskTitle" placeholder="Tulis tugas baru..." required maxlength="120" />
+          <select id="taskCourse" aria-label="Mata kuliah">
+            <option value="">- Tanpa mata kuliah -</option>
+          </select>
+          <button type="submit" id="submitBtn" class="btn-primary">+ Tambah</button>
+          <button type="button" id="cancelBtn" class="btn-ghost" hidden>Batal</button>
+        </form>
+
+        <!-- Daftar Tugas -->
+        <ul id="taskList" class="task-list"></ul>
+        <p id="emptyState" class="empty-state" hidden>Belum ada tugas. Tambahkan satu di atas!</p>
+      </section>
+
+    </main>
+
+    <footer class="footnote">
+      © 2026 · Tugas 2 Praktikum Pengembangan Aplikasi Web · Teknik Informatika ITERA
+    </footer>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
