@@ -42,10 +42,10 @@ keranjang belanja berbasis localStorage sehingga data tidak hilang saat halaman 
 
 | No | Screenshot | Keterangan Fitur |
 | :--- | :--- | :--- |
-| 1 | ![Full Screen](./assets/Full_Screen.png) | Tampilan penuh aplikasi Mini POS |
-| 2 | ![Form Input](./assets/Form_Input.png) | Form input barang dengan placeholder panduan pengguna |
-| 3 | ![Validasi Error](./assets/Validasi_Error.png) | Validasi form: Pesan error merah muncul saat input tidak sesuai syarat |
-| 4 | ![Hasil Keranjang](./assets/Keranjang.png) | Tabel keranjang, subtotal otomatis, dan ringkasan total + diskon |
+| 1 | ![Full Screen](/docs/screenshots/pertemuan1/Full_Screen.png) | Tampilan penuh aplikasi Mini POS |
+| 2 | ![Form Input](/docs/screenshots/pertemuan1/Form_Input.png) | Form input barang dengan placeholder panduan pengguna |
+| 3 | ![Validasi Error](/docs/screenshots/pertemuan1/Validasi_Error.png) | Validasi form: Pesan error merah muncul saat input tidak sesuai syarat |
+| 4 | ![Hasil Keranjang](/docs/screenshots/pertemuan1/Keranjang.png) | Tabel keranjang, subtotal otomatis, dan ringkasan total + diskon |
 
 ## Penjelasan Teknis Singkat
 
