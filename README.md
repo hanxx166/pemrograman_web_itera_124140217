@@ -103,12 +103,6 @@ git push origin add/pertemuan3
 - [ ] Jika perlu, sertakan `README.md` penjelasan tugas
 - [ ] Sertakan screenshot di `docs/screenshots` (opsional)
 
----
-
-## Rencana pengembangan / catatan untuk dosen
-- Struktur ini dibuat agar mudah di-review: satu folder = satu tugas/pertemuan.
-- Nanti bisa ditambahkan `SUMMARY.md` di root untuk daftar pertemuan dan status (done/in progress).
-- Bila ingin deploy demo, aktifkan GitHub Pages dan arahkan ke folder root atau branch `gh-pages`.
 
 ---
 
