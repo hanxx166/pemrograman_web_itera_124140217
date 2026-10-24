@@ -3,11 +3,12 @@
 **Program Studi Teknik Informatika - Institut Teknologi Sumatera**
 **T.A. 2026/2027 Gasal**
 
-| --------------- | ------------------------------- |
-| **Nama** | Erhan Kurniawan |
-| **NIM** | 124140217 |
-| **Mata Kuliah** | Pengembangan Aplikasi Web (PAW) |
-| **Pertemuan** | 03 - React |
+## Identitas
+
+- **Nama Lengkap:** Erhan Kurniawan
+- **NIM:** 124140217
+- **Kelas Praktikum:** RA 
+- **Pertemuan:** 03 - React 
 
 Repository ini berisi pengerjaan Tugas **Aplikasi Manajemen Buku Pribadi** berbasis React untuk Pertemuan 3.
 
@@ -112,19 +113,19 @@ Aplikasi **Manajemen Buku Pribadi** memungkinkan pengguna mencatat buku-buku yan
 
 **Gambar 2 - Error Handling Form (Input Kosong)**
 
-![Error Handling Form](/docs/screenshots/pertemuan3/home-error.png)
+![Error Handling Form](./docs/screenshots/pertemuan3/home-error.png)
 
 **Gambar 3 - Mode Edit Buku**
 
-![Mode Edit Buku](/docs/screenshots/pertemuan3/home-edit.png)
+![Mode Edit Buku](./docs/screenshots/pertemuan3/home-edit.png)
 
 **Gambar 4 - Filter Status & Pencarian**
 
-![Filter dan Pencarian](/docs/screenshots/pertemuan3/home-filter.png)
+![Filter dan Pencarian](./docs/screenshots/pertemuan3/home-filter.png)
 
 **Gambar 5 - Halaman Statistik**
 
-![Halaman Statistik](/docs/screenshots/pertemuan3/stats.png)
+![Halaman Statistik](./docs/screenshots/pertemuan3/stats.png)
 
 ---
 
