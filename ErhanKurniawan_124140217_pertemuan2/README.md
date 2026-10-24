@@ -3,12 +3,11 @@
 **Program Studi Teknik Informatika - Institut Teknologi Sumatera**
 **T.A. 2026/2027 Gasal**
 
-|                 |                                 |
 | --------------- | ------------------------------- |
-| **Nama**        | Erhan Kurniawan                 |
-| **NIM**         | 124140217                       |
+| **Nama** | Erhan Kurniawan |
+| **NIM** | 124140217 |
 | **Mata Kuliah** | Pengembangan Aplikasi Web (PAW) |
-| **Pertemuan**   | 02 - JavaScript Next Gen (ES6+) |
+| **Pertemuan** | 02 - JavaScript Next Gen (ES6+) |
 
 Repository ini berisi pengerjaan 5 Latihan Modul dan Tugas Personal Dashboard untuk Pertemuan 2.
 
@@ -184,6 +183,6 @@ Install extension Live Server, klik kanan `dashboard-student/index.html`, lalu p
 
 <div align="center">
 
-**(c) 2026 - Tugas 2 Praktikum Pengembangan Aplikasi Web - Teknik Informatika ITERA**
+**© 2026 · Tugas 2 Praktikum Pengembangan Aplikasi Web · Teknik Informatika ITERA**
 
 </div>

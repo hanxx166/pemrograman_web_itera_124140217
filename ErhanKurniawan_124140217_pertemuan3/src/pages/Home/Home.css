@@ -1,0 +1,104 @@
+/* src/pages/Home/Home.css */
+.home-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 40px 28px 72px;
+}
+
+/* ——— Header editorial ——— */
+.home-header {
+  margin-bottom: 36px;
+  max-width: 620px;
+}
+
+.home-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.home-header h1 {
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.home-lede {
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 450;
+  max-width: 46ch;
+}
+
+/* ——— Grid: daftar (hero) + form aside ——— */
+.home-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 28px;
+  align-items: start;
+}
+
+.home-primary {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* ——— Aside form ——— */
+.home-aside {
+  position: sticky;
+  top: 88px;
+}
+
+.aside-toggle {
+  display: none;
+  width: 100%;
+  padding: 12px 18px;
+  margin-bottom: 12px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 650;
+  font-size: 14.5px;
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+}
+
+.aside-toggle:hover {
+  background: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-aside {
+    position: static;
+    order: -1;
+  }
+
+  .aside-toggle {
+    display: block;
+  }
+
+  .aside-panel {
+    display: none;
+  }
+
+  .home-aside.is-open .aside-panel {
+    display: block;
+  }
+}
+
+@media (max-width: 560px) {
+  .home-container {
+    padding: 28px 16px 56px;
+  }
+}
