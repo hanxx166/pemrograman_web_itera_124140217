@@ -109,23 +109,23 @@ Aplikasi **Manajemen Buku Pribadi** memungkinkan pengguna mencatat buku-buku yan
 
 **Gambar 1 - Halaman Utama (Beranda)**
 
-![Halaman Utama](/docs/screenshots/pertemuan3/home.png)
+![Halaman Utama](../docs/screenshots/pertemuan3/home.png)
 
 **Gambar 2 - Error Handling Form (Input Kosong)**
 
-![Error Handling Form](./docs/screenshots/pertemuan3/home-error.png)
+![Error Handling Form](../docs/screenshots/pertemuan3/home-error.png)
 
 **Gambar 3 - Mode Edit Buku**
 
-![Mode Edit Buku](./docs/screenshots/pertemuan3/home-edit.png)
+![Mode Edit Buku](../docs/screenshots/pertemuan3/home-edit.png)
 
 **Gambar 4 - Filter Status & Pencarian**
 
-![Filter dan Pencarian](./docs/screenshots/pertemuan3/home-filter.png)
+![Filter dan Pencarian](../docs/screenshots/pertemuan3/home-filter.png)
 
 **Gambar 5 - Halaman Statistik**
 
-![Halaman Statistik](./docs/screenshots/pertemuan3/stats.png)
+![Halaman Statistik](../docs/screenshots/pertemuan3/stats.png)
 
 ---
 
@@ -191,8 +191,8 @@ npx vitest run      # sekali jalan (untuk laporan/screenshot)
 
 **Gambar 6 - Hasil Eksekusi Unit Test di Terminal (5 passed)**
 
-![Hasil Unit Test BookForm](./docs/screenshots/pertemuan3/1.png)
-![Hasil Unit Test BookList](./docs/screenshots/pertemuan3/2.png)
+![Hasil Unit Test BookForm](../docs/screenshots/pertemuan3/1.test.png)
+![Hasil Unit Test BookList](../docs/screenshots/pertemuan3/2.test.png)
 
 ---
 
