@@ -3,11 +3,12 @@
 **Program Studi Teknik Informatika - Institut Teknologi Sumatera**
 **T.A. 2026/2027 Gasal**
 
-| --------------- | ------------------------------- |
-| **Nama** | Erhan Kurniawan |
-| **NIM** | 124140217 |
-| **Mata Kuliah** | Pengembangan Aplikasi Web (PAW) |
-| **Pertemuan** | 02 - JavaScript Next Gen (ES6+) |
+## Identitas
+
+- **Nama Lengkap:** Erhan Kurniawan
+- **NIM:** 124140217
+- **Kelas Praktikum:** RA
+- **Pertemuan:** 02 - JavaScript Next Gen (ES6+)
 
 Repository ini berisi pengerjaan 5 Latihan Modul dan Tugas Personal Dashboard untuk Pertemuan 2.
 
@@ -99,7 +100,7 @@ Lokasi: `dashboard-student/`
 
 ### 2. Screenshot Antarmuka Aplikasi
 
-> Catatan: File screenshot diletakkan di folder `docs/screenshots/pertemuan2/`.
+> Catatan: File screenshot diletakkan di folder `docs/screenshots/pertemuan2/` (root repository).
 
 | No  | Nama File              | Keterangan                                             |
 | --- | ---------------------- | ------------------------------------------------------ |
@@ -110,19 +111,19 @@ Lokasi: `dashboard-student/`
 
 **Gambar 1 - Dashboard (Dark Mode)**
 
-![Dashboard Dark Mode](/docs/screenshots/pertemuan2/dashboard-dark.png)
+![Dashboard Dark Mode](../docs/screenshots/pertemuan2/dashboard-dark.png)
 
 **Gambar 2 - Dashboard (Light Mode)**
 
-![Dashboard Light Mode](/docs/screenshots/pertemuan2/dashboard-light.png)
+![Dashboard Light Mode](../docs/screenshots/pertemuan2/dashboard-light.png)
 
 **Gambar 3 - Mode Edit Tugas**
 
-![Mode Edit Tugas](/docs/screenshots/pertemuan2/dashboard-edit.png)
+![Mode Edit Tugas](../docs/screenshots/pertemuan2/dashboard-edit.png)
 
 **Gambar 4 - Tampilan Mobile (Responsif)**
 
-![Tampilan Mobile](/docs/screenshots/pertemuan2/dashboard-mobile.png)
+![Tampilan Mobile](../docs/screenshots/pertemuan2/dashboard-mobile.png)
 
 ---
 
